@@ -1,6 +1,7 @@
 'use client'
 
 import ClickToCall from '@/components/shared/ClickToCall'
+import IntakeForm from '@/components/form/IntakeForm'
 
 interface HeroProps {
   phoneNumber?: string
@@ -79,32 +80,9 @@ export default function Hero({ phoneNumber = '(800) 555-0199' }: HeroProps) {
             </div>
           </div>
 
-          {/* Right — Intake form (placeholder until Step 13-14) */}
+          {/* Right — Intake form */}
           <div className="w-full lg:py-16">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 min-h-[480px] flex flex-col items-center justify-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center">
-                <svg className="w-6 h-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                </svg>
-              </div>
-              <p className="font-sans text-navy font-semibold text-center">
-                Free Case Review Form
-              </p>
-              <p className="font-sans text-sm text-gray-400 text-center max-w-xs">
-                Multi-step intake form coming in Step 13. Drop your info and get an AI-powered case assessment in seconds.
-              </p>
-              <div className="w-full mt-2 space-y-3">
-                {['What type of accident?', 'When did it happen?', 'Tell us what happened', 'Your contact info'].map((label, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-gold flex items-center justify-center flex-shrink-0">
-                      <span className="text-navy text-xs font-bold font-sans">{i + 1}</span>
-                    </div>
-                    <div className="flex-1 h-8 bg-gray-100 rounded-lg" />
-                    <span className="text-xs text-gray-400 font-sans whitespace-nowrap">{label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <IntakeForm />
           </div>
 
         </div>
