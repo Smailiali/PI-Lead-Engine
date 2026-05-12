@@ -163,7 +163,7 @@ Open [http://localhost:3000](http://localhost:3000) for the landing page and [ht
 
 ## Live Demo
 
-[Coming after Vercel deployment]
+[https://pi-lead-engine.vercel.app](https://pi-lead-engine.vercel.app)
 
 ---
 
