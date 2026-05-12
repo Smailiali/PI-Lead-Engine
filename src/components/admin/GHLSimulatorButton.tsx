@@ -91,7 +91,7 @@ export default function GHLSimulatorButton() {
 
       {/* Success toast */}
       {toast && (
-        <div className="flex items-start gap-3 bg-admin-card border border-admin-green/30 rounded-xl px-4 py-3 animate-in slide-in-from-top-2 duration-300">
+        <div className="flex items-start gap-3 bg-admin-card border border-admin-green/30 rounded-xl px-4 py-3 animate-slide-in">
           <div className="w-2 h-2 rounded-full bg-admin-green flex-shrink-0 mt-1.5" />
           <div className="flex flex-col gap-0.5 min-w-0">
             <p className="font-sans text-sm font-semibold text-admin-text">

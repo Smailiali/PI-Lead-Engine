@@ -119,7 +119,7 @@ const LEADS: LeadSeed[] = [
     aiValueRange: '$10K-$50K',
     aiUrgency: 'Medium',
     aiRedFlags: [
-      'No ER visit — only chiropractic treatment weakens injury documentation',
+      'No ER visit; only chiropractic treatment weakens injury documentation',
       'Insurance denial may indicate liability dispute',
     ],
     aiRecommendation:
@@ -145,7 +145,7 @@ const LEADS: LeadSeed[] = [
     aiUrgency: 'High',
     aiRedFlags: [],
     aiRecommendation:
-      'Excellent case with multiple liable parties — both the Lyft driver and the other driver. Lyft carries $1M commercial insurance for passenger injuries. Eight weeks of documented PT and a herniated disc significantly increase case value. Priority sign.',
+      'Excellent case with multiple liable parties: both the Lyft driver and the other driver. Lyft carries $1M commercial insurance for passenger injuries. Eight weeks of documented PT and a herniated disc significantly increase case value. Priority sign.',
   },
   {
     firstName: 'David',
@@ -168,7 +168,7 @@ const LEADS: LeadSeed[] = [
     aiValueRange: '$50K-$150K',
     aiUrgency: 'Medium',
     aiRedFlags: [
-      'Hit and run complicates recovery — may require uninsured motorist claim',
+      'Hit and run complicates recovery; may require uninsured motorist claim',
       'Insurance companies often apply comparative negligence to motorcyclists',
     ],
     aiRecommendation:
@@ -194,9 +194,9 @@ const LEADS: LeadSeed[] = [
     aiValueRange: '$10K-$50K',
     aiUrgency: 'Low',
     aiRedFlags: [
-      'Significant gap in treatment — 5 months without seeing a doctor severely undermines injury causation',
+      'Significant gap in treatment: 5 months without seeing a doctor severely undermines injury causation',
       'Defense will argue the injury predates or is unrelated to the fall',
-      'Must investigate statute of limitations — 2-year California limit',
+      'Must investigate statute of limitations: 2-year California limit',
       'No incident report or witnesses documented',
     ],
     aiRecommendation:
@@ -222,7 +222,7 @@ const LEADS: LeadSeed[] = [
     aiViability: 'Moderate',
     aiValueRange: '$10K-$50K',
     aiUrgency: 'High',
-    aiRedFlags: ['Only urgent care visit so far — needs hospital-level imaging to confirm injuries'],
+    aiRedFlags: ['Only urgent care visit so far; needs hospital-level imaging to confirm injuries'],
     aiRecommendation:
       'Good liability facts with police report and citation. Case value will depend on injury documentation. Advise client to get an MRI and follow up with a specialist immediately. Strong liability, needs stronger injury proof.',
   },
@@ -267,10 +267,10 @@ const LEADS: LeadSeed[] = [
     aiValueRange: '$10K-$50K',
     aiUrgency: 'Low',
     aiRedFlags: [
-      'Low-speed parking lot collision — minimal property damage',
+      'Low-speed parking lot collision; minimal property damage',
       'No police report filed',
       'No medical treatment obtained at any point',
-      '8 months elapsed — statute of limitations concern and severe causation issues',
+      '8 months elapsed: statute of limitations concern and severe causation issues',
       'Vague symptoms with no documentation',
     ],
     aiRecommendation:

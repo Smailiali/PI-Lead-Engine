@@ -108,14 +108,14 @@ export default function IntakeForm() {
       {/* Progress bar header */}
       <div className="px-8 pt-8 pb-6 border-b border-gray-100">
         <p className="font-sans text-xs text-gray-400 text-center mb-5 uppercase tracking-widest">
-          Free Case Review &mdash; Takes Less Than 2 Minutes
+          Free Case Review · Takes Less Than 2 Minutes
         </p>
         <FormProgressBar currentStep={currentStep} />
       </div>
 
       {/* Step content */}
       <div
-        className={`transition-opacity duration-200 ${animating ? 'opacity-0' : 'opacity-100'}`}
+        className={`transition-opacity duration-200 ${animating ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
       >
         {currentStep === 1 && (
           <StepAccidentType

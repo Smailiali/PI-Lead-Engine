@@ -16,7 +16,7 @@ export default function Hero({ phoneNumber = '(800) 555-0199' }: HeroProps) {
       {/* Subtle radial glow top-left */}
       <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-gold opacity-[0.04] blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-0 min-h-screen flex items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24 flex items-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* Left — Copy */}
@@ -57,7 +57,7 @@ export default function Hero({ phoneNumber = '(800) 555-0199' }: HeroProps) {
             {/* Phone CTA */}
             <div className="flex flex-col gap-2">
               <p className="font-sans text-sm text-white/50 uppercase tracking-widest">
-                Call us now — available 24/7
+                Call us now, available 24/7
               </p>
               <ClickToCall
                 phoneNumber={phoneNumber}

@@ -20,7 +20,7 @@ export default async function WebhookLogPage() {
         <div>
           <h1 className="font-sans text-2xl font-bold text-admin-text">Webhook Log</h1>
           <p className="font-sans text-sm text-admin-muted mt-1">
-            All incoming webhook events — form submissions, GHL contacts, and simulated payloads.
+            All incoming webhook events: form submissions, GHL contacts, and simulated payloads.
           </p>
 
           {/* Quick stats */}

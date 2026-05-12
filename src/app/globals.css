@@ -17,4 +17,67 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  /* Dark scrollbars for admin area */
+  .admin-scroll,
+  .admin-scroll * {
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #1e293b;
+  }
+
+  .admin-scroll::-webkit-scrollbar,
+  .admin-scroll *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .admin-scroll::-webkit-scrollbar-track,
+  .admin-scroll *::-webkit-scrollbar-track {
+    background: #1e293b;
+  }
+
+  .admin-scroll::-webkit-scrollbar-thumb,
+  .admin-scroll *::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 3px;
+  }
+
+  .admin-scroll::-webkit-scrollbar-thumb:hover,
+  .admin-scroll *::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+  }
+}
+
+@layer utilities {
+  /* Toast slide-in (used in GHLSimulatorButton) */
+  .animate-slide-in {
+    animation: slideInFromTop 0.25s ease-out forwards;
+  }
+
+  /* Form step enter animation */
+  .animate-step-in {
+    animation: stepEnter 0.2s ease-out forwards;
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stepEnter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

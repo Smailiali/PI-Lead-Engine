@@ -62,7 +62,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? 'max-h-96 opacity-100 pb-5' : 'max-h-0 opacity-0'
+          open ? 'max-h-[600px] opacity-100 pb-5' : 'max-h-0 opacity-0'
         }`}
       >
         <p className="font-sans text-gray-500 leading-relaxed">{answer}</p>

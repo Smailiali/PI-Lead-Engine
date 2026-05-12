@@ -74,7 +74,7 @@ export default function AttributionChart({ campaignData, sourceData }: Attributi
         <div className="px-6 py-4 border-b border-admin-border">
           <p className="font-sans text-sm font-semibold text-admin-text">Leads by Campaign</p>
           <p className="font-sans text-xs text-admin-muted mt-0.5">
-            Top {campaignData.length} campaigns — bar color reflects average AI score quality
+            Top {campaignData.length} campaigns. Bar color reflects average AI score quality.
           </p>
         </div>
 

@@ -34,7 +34,7 @@ interface StepAccidentTimingProps {
 
 export default function StepAccidentTiming({ selected, onSelect }: StepAccidentTimingProps) {
   return (
-    <div className="px-8 py-7">
+    <div className="px-8 py-7 animate-step-in">
       <div className="mb-6">
         <h2 className="font-serif text-2xl text-navy leading-snug">When did this happen?</h2>
         <p className="font-sans text-sm text-gray-400 mt-1">
@@ -42,7 +42,7 @@ export default function StepAccidentTiming({ selected, onSelect }: StepAccidentT
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-3">
         {TIMINGS.map(({ icon, title, value, description }) => (
           <FormCard
             key={value}

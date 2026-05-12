@@ -47,7 +47,7 @@ export default function StepContactInfo({
   }
 
   return (
-    <div className="px-8 py-7">
+    <div className="px-8 py-7 animate-step-in">
       <div className="mb-6">
         <h2 className="font-serif text-2xl text-navy leading-snug">
           Let&apos;s get you your free case review
