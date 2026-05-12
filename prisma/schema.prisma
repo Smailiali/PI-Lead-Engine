@@ -1,1 +1,61 @@
-// Prisma schema — see Step 2 for full implementation
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id             String   @id @default(cuid())
+  firstName      String
+  lastName       String
+  phone          String
+  email          String?
+  accidentType   String
+  accidentTiming String
+  description    String   @db.Text
+  status         String   @default("new") // new, contacted, qualified, signed, rejected
+
+  // Attribution
+  utmSource  String?
+  utmMedium  String?
+  utmCampaign String?
+  utmContent String?
+  utmTerm    String?
+  gclid      String?
+  landingPage String?
+  referrer   String?
+
+  // AI Screening
+  aiScore          Int?
+  aiCaseType       String?
+  aiViability      String?
+  aiValueRange     String?
+  aiUrgency        String?
+  aiRedFlags       String?   @db.Text
+  aiRecommendation String?   @db.Text
+  aiScreenedAt     DateTime?
+
+  // GHL
+  ghlContactId String?
+  ghlSource    String?
+
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  webhookLogs WebhookLog[]
+}
+
+model WebhookLog {
+  id             String   @id @default(cuid())
+  source         String // "ghl", "form", "simulator"
+  eventType      String // "ContactCreate", "FormSubmission", etc.
+  payload        String   @db.Text // raw JSON
+  status         String // "received", "processed", "screened", "stored", "error"
+  errorMessage   String?  @db.Text
+  processingTime Int? // milliseconds
+  leadId         String?
+  lead           Lead?    @relation(fields: [leadId], references: [id])
+  createdAt      DateTime @default(now())
+}
