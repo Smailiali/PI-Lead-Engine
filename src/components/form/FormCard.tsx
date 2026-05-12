@@ -1,12 +1,14 @@
+import type { LucideIcon } from 'lucide-react'
+
 interface FormCardProps {
-  icon: string
+  icon: LucideIcon
   title: string
   description?: string
   selected: boolean
   onClick: () => void
 }
 
-export default function FormCard({ icon, title, description, selected, onClick }: FormCardProps) {
+export default function FormCard({ icon: Icon, title, description, selected, onClick }: FormCardProps) {
   return (
     <button
       type="button"
@@ -23,7 +25,9 @@ export default function FormCard({ icon, title, description, selected, onClick }
       `}
     >
       {/* Icon */}
-      <span className="text-2xl leading-none flex-shrink-0 mt-0.5">{icon}</span>
+      <span className={`flex-shrink-0 mt-0.5 ${selected ? 'text-gold' : 'text-gray-400'}`}>
+        <Icon className="w-5 h-5" />
+      </span>
 
       {/* Text */}
       <div className="flex flex-col gap-0.5 min-w-0">

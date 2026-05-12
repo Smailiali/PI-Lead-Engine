@@ -1,17 +1,23 @@
-const steps = [
+import { ClipboardList, FileSearch, Scale } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
+
+const steps: { icon: LucideIcon; number: string; title: string; description: string }[] = [
   {
+    icon: ClipboardList,
     number: '1',
     title: 'Tell Us What Happened',
     description:
       'Share your story through our simple form. It takes less than 2 minutes and there is no obligation.',
   },
   {
+    icon: FileSearch,
     number: '2',
     title: 'Free Case Review',
     description:
       'Our team reviews your case and our AI pre-screens it for a fast, accurate response within 24 hours.',
   },
   {
+    icon: Scale,
     number: '3',
     title: 'We Fight For You',
     description:
@@ -21,7 +27,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-white py-24">
+    <section id="how-it-works" className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -39,11 +45,11 @@ export default function HowItWorks() {
           {/* Connecting line — desktop only */}
           <div className="hidden md:block absolute top-10 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-[2px] bg-gold/20" />
 
-          {steps.map(({ number, title, description }) => (
+          {steps.map(({ icon: Icon, number, title, description }) => (
             <div key={number} className="flex flex-col items-center text-center gap-5 relative">
-              {/* Number circle */}
+              {/* Icon circle */}
               <div className="relative z-10 w-20 h-20 rounded-full bg-navy flex items-center justify-center shadow-lg border-4 border-gold/20 flex-shrink-0">
-                <span className="font-serif text-3xl text-gold">{number}</span>
+                <Icon className="w-8 h-8 text-gold" />
               </div>
 
               <div className="flex flex-col gap-3">

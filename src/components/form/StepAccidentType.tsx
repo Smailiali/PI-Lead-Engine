@@ -1,12 +1,14 @@
+import { Car, Truck, Bike, AlertTriangle, HeartCrack, HelpCircle } from 'lucide-react'
 import FormCard from '@/components/form/FormCard'
+import type { LucideIcon } from 'lucide-react'
 
-const ACCIDENT_TYPES = [
-  { icon: '🚗', title: 'Car Accident', value: 'Car Accident' },
-  { icon: '🚛', title: 'Truck Accident', value: 'Truck Accident' },
-  { icon: '🏍️', title: 'Motorcycle Accident', value: 'Motorcycle Accident' },
-  { icon: '⚠️', title: 'Slip & Fall', value: 'Slip & Fall' },
-  { icon: '🕊️', title: 'Wrongful Death', value: 'Wrongful Death' },
-  { icon: '❓', title: 'Other', value: 'Other' },
+const ACCIDENT_TYPES: { icon: LucideIcon; title: string; value: string }[] = [
+  { icon: Car, title: 'Car Accident', value: 'Car Accident' },
+  { icon: Truck, title: 'Truck Accident', value: 'Truck Accident' },
+  { icon: Bike, title: 'Motorcycle Accident', value: 'Motorcycle Accident' },
+  { icon: AlertTriangle, title: 'Slip & Fall', value: 'Slip & Fall' },
+  { icon: HeartCrack, title: 'Wrongful Death', value: 'Wrongful Death' },
+  { icon: HelpCircle, title: 'Other', value: 'Other' },
 ]
 
 interface StepAccidentTypeProps {

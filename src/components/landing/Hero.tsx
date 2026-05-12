@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ phoneNumber = '(800) 555-0199' }: HeroProps) {
   return (
-    <section className="relative min-h-screen bg-navy overflow-hidden">
+    <section className="relative min-h-screen bg-navy overflow-hidden pt-16">
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy to-navy-light opacity-90 pointer-events-none" />
 

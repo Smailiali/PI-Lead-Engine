@@ -1,26 +1,28 @@
+import { CalendarDays, Calendar, Clock, CalendarX } from 'lucide-react'
 import FormCard from '@/components/form/FormCard'
+import type { LucideIcon } from 'lucide-react'
 
-const TIMINGS = [
+const TIMINGS: { icon: LucideIcon; title: string; value: string; description: string }[] = [
   {
-    icon: '📅',
+    icon: CalendarDays,
     title: 'This Week',
     value: 'This week',
     description: 'Within the last 7 days',
   },
   {
-    icon: '🗓️',
+    icon: Calendar,
     title: 'This Month',
     value: 'This month',
     description: 'Within the last 30 days',
   },
   {
-    icon: '⏳',
+    icon: Clock,
     title: '1 to 3 Months Ago',
     value: '1-3 months ago',
     description: 'Still within a good window',
   },
   {
-    icon: '🕐',
+    icon: CalendarX,
     title: 'More Than 3 Months Ago',
     value: 'More than 3 months ago',
     description: 'We can still help in many cases',

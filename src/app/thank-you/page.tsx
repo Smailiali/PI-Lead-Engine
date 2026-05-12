@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
 import ClickToCall from '@/components/shared/ClickToCall'
+import { Phone, FileText, Scale } from 'lucide-react'
+import type { ReactNode } from 'react'
 
 const PHONE_NUMBER = '(800) 555-0199'
 
@@ -39,19 +41,19 @@ function ScoreBar({ score }: { score: number }) {
   )
 }
 
-const NEXT_STEPS = [
+const NEXT_STEPS: { icon: ReactNode; title: string; description: string }[] = [
   {
-    icon: '📞',
+    icon: <Phone className="w-5 h-5 text-gold" />,
     title: 'We will call you within 24 hours',
     description: 'An intake specialist will review your case and reach out to discuss your options.',
   },
   {
-    icon: '📋',
+    icon: <FileText className="w-5 h-5 text-gold" />,
     title: 'Review your case details',
     description: 'We will go through the specifics of your accident and injuries together.',
   },
   {
-    icon: '⚖️',
+    icon: <Scale className="w-5 h-5 text-gold" />,
     title: 'Discuss your legal options',
     description:
       'If you have a strong case, we will explain exactly how we can help and what to expect.',
@@ -169,7 +171,7 @@ export default async function ThankYouPage({ searchParams }: ThankYouPageProps) 
           <div className="flex flex-col gap-5">
             {NEXT_STEPS.map(({ icon, title, description }, i) => (
               <div key={i} className="flex gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-navy flex items-center justify-center text-lg">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-navy flex items-center justify-center">
                   {icon}
                 </div>
                 <div className="flex flex-col gap-0.5 pt-1">

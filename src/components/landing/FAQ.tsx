@@ -73,7 +73,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 
 export default function FAQ() {
   return (
-    <section className="bg-warm-gray py-24">
+    <section id="faq" className="bg-warm-gray py-24">
       <div className="max-w-3xl mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="text-center mb-14">

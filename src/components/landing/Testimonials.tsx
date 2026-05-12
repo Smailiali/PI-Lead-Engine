@@ -39,7 +39,7 @@ function StarRating({ count }: { count: number }) {
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-24">
+    <section id="testimonials" className="bg-white py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section header */}
         <div className="text-center mb-16">

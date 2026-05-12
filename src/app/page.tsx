@@ -1,3 +1,4 @@
+import Navbar from '@/components/landing/Navbar'
 import Hero from '@/components/landing/Hero'
 import SocialProofBar from '@/components/landing/SocialProofBar'
 import HowItWorks from '@/components/landing/HowItWorks'
@@ -12,6 +13,7 @@ const PHONE_NUMBER = '(800) 555-0199'
 export default function LandingPage() {
   return (
     <main className="pb-16 md:pb-0">
+      <Navbar />
       <Hero phoneNumber={PHONE_NUMBER} />
       <SocialProofBar />
       <HowItWorks />
