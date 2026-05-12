@@ -10,36 +10,6 @@ interface ThankYouPageProps {
   searchParams: { id?: string }
 }
 
-function UrgencyBadge({ urgency }: { urgency: string }) {
-  const styles: Record<string, string> = {
-    High: 'bg-red-100 text-red-700 border-red-200',
-    Medium: 'bg-amber-100 text-amber-700 border-amber-200',
-    Low: 'bg-green-100 text-green-700 border-green-200',
-  }
-  return (
-    <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-full border text-xs font-semibold font-sans ${styles[urgency] ?? 'bg-gray-100 text-gray-600 border-gray-200'}`}
-    >
-      {urgency} Priority
-    </span>
-  )
-}
-
-function ScoreBar({ score }: { score: number }) {
-  const pct = (score / 10) * 100
-  const color = score >= 8 ? 'bg-green-500' : score >= 5 ? 'bg-amber-400' : 'bg-red-400'
-  return (
-    <div className="flex items-center gap-3">
-      <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
-        <div
-          className={`h-full rounded-full transition-all duration-700 ${color}`}
-          style={{ width: `${pct}%` }}
-        />
-      </div>
-      <span className="font-sans text-sm font-bold text-navy w-8 text-right">{score}/10</span>
-    </div>
-  )
-}
 
 const NEXT_STEPS: { icon: ReactNode; title: string; description: string }[] = [
   {
@@ -112,50 +82,28 @@ export default async function ThankYouPage({ searchParams }: ThankYouPageProps) 
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-12 flex flex-col gap-8">
-        {/* AI Assessment card */}
+        {/* Case summary card */}
         {hasScreening ? (
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-            <div className="bg-navy/5 border-b border-gray-100 px-7 py-5 flex items-center justify-between">
-              <div>
-                <p className="font-sans text-xs text-gray-400 uppercase tracking-widest mb-1">
-                  AI Case Assessment
-                </p>
-                <p className="font-serif text-xl text-navy">{lead.aiCaseType}</p>
-              </div>
-              {lead.aiUrgency && <UrgencyBadge urgency={lead.aiUrgency} />}
+            <div className="bg-navy/5 border-b border-gray-100 px-7 py-5">
+              <p className="font-sans text-xs text-gray-400 uppercase tracking-widest mb-1">
+                Case Summary
+              </p>
+              <p className="font-serif text-xl text-navy">{lead.aiCaseType}</p>
             </div>
 
-            <div className="px-7 py-6 flex flex-col gap-6">
-              {/* Score */}
-              <div className="flex flex-col gap-2">
-                <div className="flex items-center justify-between">
-                  <p className="font-sans text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    Case Strength
-                  </p>
-                  <p className="font-sans text-xs text-gray-400">{lead.aiViability}</p>
-                </div>
-                <ScoreBar score={lead.aiScore!} />
-              </div>
-
-              {/* Value range */}
+            <div className="px-7 py-6 flex flex-col gap-4">
               {lead.aiValueRange && (
-                <div className="flex items-center justify-between py-4 border-t border-gray-100">
+                <div className="flex items-center justify-between py-2">
                   <p className="font-sans text-sm text-gray-500">Estimated Case Value</p>
                   <p className="font-serif text-xl text-gold">{lead.aiValueRange}</p>
                 </div>
               )}
-
-              {/* Recommendation */}
-              {lead.aiRecommendation && (
-                <div className="bg-navy/[0.03] rounded-xl p-4 border border-navy/10">
-                  <p className="font-sans text-xs font-semibold text-navy/50 uppercase tracking-wider mb-2">
-                    Our Assessment
-                  </p>
-                  <p className="font-sans text-sm text-navy/80 leading-relaxed">
-                    {lead.aiRecommendation}
-                  </p>
-                </div>
-              )}
+              <div className="bg-navy/[0.03] rounded-xl p-4 border border-navy/10">
+                <p className="font-sans text-sm text-navy/80 leading-relaxed">
+                  Based on the details you provided, our team will review your case and reach out within 24 hours to discuss your options.
+                </p>
+              </div>
             </div>
           </div>
         ) : (

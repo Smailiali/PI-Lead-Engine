@@ -16,9 +16,38 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'PI Lead Engine',
+  title: {
+    default: 'Deldar Legal | Personal Injury Attorneys',
+    template: '%s | Deldar Legal',
+  },
   description:
-    'A full-stack lead generation and attribution pipeline for personal injury law firms.',
+    'Injured in an accident? Deldar Legal fights for maximum compensation. Free case review. No fees unless we win. Call now or submit your case online.',
+  keywords: [
+    'personal injury attorney',
+    'car accident lawyer',
+    'free case review',
+    'no fee unless we win',
+    'personal injury lawyer',
+    'accident attorney',
+  ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'Deldar Legal',
+    title: 'Deldar Legal | Personal Injury Attorneys',
+    description:
+      'Injured in an accident? Deldar Legal fights for maximum compensation. Free case review. No fees unless we win.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Deldar Legal | Personal Injury Attorneys',
+    description:
+      'Injured in an accident? Deldar Legal fights for maximum compensation. Free case review. No fees unless we win.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
